@@ -1,13 +1,7 @@
 import PropTypes from "prop-types";
-import Menu from "../../../../components/menu";
 
 const HomeView = () => {
-  return (
-    <div>
-      HOME PAGE
-      <Menu></Menu>
-    </div>
-  );
+  return <div>HOME PAGE</div>;
 };
 
 HomeView.propTypes = {

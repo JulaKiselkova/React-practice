@@ -2,16 +2,19 @@ import { memo } from "react";
 import styles from "./styles.module.css";
 import PropTypes from "prop-types";
 
-const CounterView = ({
+const FuncCounterView = ({
   countValue,
   onIncrement,
   onDecrement,
   onReset,
+  id,
 }) => {
   const isEven = countValue % 2 === 0;
   return (
     <div>
       <div className={styles.wrapper}>
+        <p>{id}</p>
+        <button>Delete</button>
         <div className={styles.screen}>{countValue}</div>
         <div
           className={`${styles.numInfo} ${
@@ -30,11 +33,12 @@ const CounterView = ({
   );
 };
 
-CounterView.propTypes = {
+FuncCounterView.propTypes = {
   countValue: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-export default memo(CounterView);
+export default memo(FuncCounterView);
