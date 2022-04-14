@@ -1,6 +1,4 @@
-import React from "react";
-import { useState, memo, useCallback } from "react";
-//import { v4 as uuid } from "uuid";
+import { useState, useCallback, memo } from "react";
 import FuncCounterView from "../components/FuncCounterView";
 
 const FuncCounterContainer = () => {
@@ -20,6 +18,10 @@ const FuncCounterContainer = () => {
     setCountValue(0);
   }, []);
 
+  const handleDel = useCallback(() => {
+    setCountValue(0);
+  }, [countValue]);
+
   return (
     <div>
       <FuncCounterView
@@ -28,6 +30,7 @@ const FuncCounterContainer = () => {
         onReset={handleOnReset}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
+        onDelete={handleDel}
       />
     </div>
   );

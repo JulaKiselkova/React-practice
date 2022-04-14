@@ -1,25 +1,38 @@
-
 import { memo } from "react";
 import PropTypes from "prop-types";
-import FuncCounterContainer from "../../../CounterFunc/containers/FuncCounterContainer";
+import FuncCounterView from "../../../CounterFunc/components/FuncCounterView";
 
-const CountersView = ({ counters, addCount, removeCount, resetCounters }) => {
+const CountersView = ({
+  counters,
+  addCount,
+  removeCount,
+  resetCounters,
+  onIncrement,
+  onDecrement,
+  onReset,
+  onDelete,
+  totalSum,
+}) => {
   return (
     <div>
       <div>
-        {counters.map((counter) => {
+        {counters.map(({ id, countValue }) => {
           return (
-            <FuncCounterContainer
-              key={counter.id}
-              id={counter.id}
-              countValue={counter.countValue}
+            <FuncCounterView
+              key={id}
+              id={id}
+              countValue={countValue}
+              onDecrement={() => onDecrement(id)}
+              onIncrement={() => onIncrement(id)}
+              onReset={() => onReset(id)}
+              onDelete={() => onDelete(id)}
             />
           );
         })}
       </div>
       <div>
         <div>Total counters: {counters.length}</div>
-        {/* <div>Total value: {countersSumValue}</div> */}
+        <div>Total value: {totalSum}</div>
       </div>
       <button onClick={addCount}>Add Counter</button>
       <button onClick={removeCount}>Remove Counter</button>

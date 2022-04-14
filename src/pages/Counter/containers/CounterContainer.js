@@ -1,4 +1,3 @@
-// import React, { Component } from "react";
 import { Component } from "react";
 import CounterView from "../components/CounterView";
 

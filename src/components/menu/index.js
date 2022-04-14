@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_NAMES } from "../../Routes/routeNames";
 
@@ -23,4 +24,4 @@ const Menu = ({ children }) => {
   );
 };
 
-export default Menu;
+export default memo(Menu);

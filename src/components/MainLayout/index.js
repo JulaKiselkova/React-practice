@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Menu from "../menu";
 
 const MainLayout = ({ children }) => {
@@ -9,4 +10,4 @@ const MainLayout = ({ children }) => {
   );
 };
 
-export default MainLayout;
+export default memo(MainLayout);
