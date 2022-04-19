@@ -1,3 +1,5 @@
+@color: mediumpurple;
+
 .wrapper {
   display: block;
   margin-left: auto;
@@ -48,11 +50,21 @@ button {
   border-radius: 10px;
   cursor: pointer;
   color: white;
-  background-color: mediumpurple;
+}
+.delete {
+  background-color: crimson;
 }
 
+.edit {
+  background-color: orange;
+}
+
+.complete {
+  background-color: limegreen;
+}
 button:hover {
   transition: 0.5s;
+  -webkit-transform: scale(1.1);
   /* -moz-transform: scale(1.1);
   -o-transform: scale(1.1); */
 }

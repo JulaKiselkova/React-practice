@@ -19,6 +19,12 @@ const Menu = ({ children }) => {
         <button>
           <Link to={ROUTE_NAMES.COUNTERS_PAGE}>Counters</Link>
         </button>
+        <button>
+          <Link to={ROUTE_NAMES.TODO_LIST}>Todo</Link>
+        </button>
+        <button>
+          <Link to={ROUTE_NAMES.FORMIK}>FORMIK</Link>
+        </button>
       </div>
     </div>
   );
