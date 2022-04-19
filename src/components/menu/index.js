@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
+
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ROUTE_NAMES } from "../../Routes/routeNames";
 
@@ -14,9 +16,12 @@ const Menu = ({ children }) => {
         <button>
           <Link to={ROUTE_NAMES.COUNTER_PAGE}>Counter</Link>
         </button>
+        <button>
+          <Link to={ROUTE_NAMES.COUNTERS_PAGE}>Counters</Link>
+        </button>
       </div>
     </div>
   );
 };
 
-export default Menu;
+export default memo(Menu);

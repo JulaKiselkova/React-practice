@@ -1,13 +1,15 @@
 import { createRoot } from "react-dom/client";
-import CounterContainer from "./pages/Counter/containers/CounterContainer";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./Routes/Routes";
+import MainLayout from "./components/MainLayout";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <BrowserRouter>
-    <Router />
+    <MainLayout>
+      <Router />
+    </MainLayout>
   </BrowserRouter>
 );

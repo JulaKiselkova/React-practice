@@ -1,8 +1,5 @@
-// import React, { Component } from "react";
 import { Component } from "react";
 import CounterView from "../components/CounterView";
-
-//export const borderColor = "mediumpurple";
 
 export default class CounterContainer extends Component {
   constructor(props) {
@@ -10,7 +7,6 @@ export default class CounterContainer extends Component {
 
     this.state = {
       countValue: 0,
-      parityType: "even",
     };
   }
 
@@ -22,28 +18,30 @@ export default class CounterContainer extends Component {
   }
 
   handleDecrement = () => {
-    this.setState((state) => {
-      if (this.state.countValue > 0) {
-        return {
-          countValue: this.state.countValue - 1,
-        };
-      }
-    });
+    if (this.state.countValue > 0) {
+      this.setState({ countValue: this.state.countValue - 1 });
+    }
   };
+
+  handleSetId = () => {
+    this.state.id = Math.random().toString(36).substring(2, 9);
+    const id = this.state.id;
+    this.setState({ id: this.state.id });
+  };
+
   handleIncrement = () => {
-    this.setState((state) => {
-      return {
-        countValue: this.state.countValue + 1,
-      };
-    });
+    this.setState({ countValue: this.state.countValue + 1 });
+    console.log(this.state.countValue + 1);
+    console.log(this.state.id);
   };
 
   handleReset = () => {
-    this.setState((state) => {
-      return {
-        countValue: 0,
-      };
-    });
+    // this.setState((state) => {
+    //   return {
+    //     countValue: 0,
+    //   };
+    // });
+    this.setState({ countValue: 0 });
   };
   render() {
     return (
@@ -52,7 +50,6 @@ export default class CounterContainer extends Component {
         onDecrement={this.handleDecrement}
         onIncrement={this.handleIncrement}
         onReset={this.handleReset}
-        parityType={this.state.parityType}
       />
     );
   }
